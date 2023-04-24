@@ -7,8 +7,7 @@ from itertools import permutations
 
 
 def tsp(graph, start):
-    path = []
-    vertex = []
+    vertex, path = [], None
     min_cost = float('inf')
     for index in range(len(graph)):
         if index != start:
@@ -27,14 +26,14 @@ def tsp(graph, start):
             path = curr_path
         min_cost = min(min_cost, current_cost)
     path.append(start)
-    print(path)
-    return min_cost
+    return min_cost, path
 
 
 def main():
-    graph = [[0, 10, 15, 20], [10, 0, 35, 25], [15, 35, 0, 30], [20, 25, 30, 0]]
-    s = 0
-    print(tsp(graph, s))
+    size, start = [int(item) for item in input().split()]
+    items = [[int(item) for item in input().split()] for _ in range(size)]
+    min_cost, path = tsp(items, start)
+    print(f"{min_cost}\n{path}")
 
 
 if __name__ == "__main__":
