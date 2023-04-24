@@ -24,7 +24,7 @@ def tsp(graph, start):
         current_cost += graph[item][start]
         if current_cost < min_cost:
             path = curr_path
-        min_cost = min(min_cost, current_cost)
+            min_cost = current_cost
     path.append(start)
     return min_cost, path
 
