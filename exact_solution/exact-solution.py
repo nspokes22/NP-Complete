@@ -6,7 +6,8 @@
 from itertools import permutations
 
 
-def tsp(graph, start):
+def tsp(graph):
+    start = 0
     vertex, path = [], None
     min_cost = float('inf')
     for index in range(len(graph)):
@@ -30,10 +31,29 @@ def tsp(graph, start):
 
 
 def main():
-    size, start = [int(item) for item in input().split()]
-    items = [[int(item) for item in input().split()] for _ in range(size)]
-    min_cost, path = tsp(items, start)
-    print(f"{min_cost}\n{path}")
+    arb2num, num2arb, count, ending = {}, {}, 0, ' '
+    qty_v, qty_e = [int(item) for item in input().split()]
+    items = [[0] * qty_v for _ in range(qty_v)]
+    for _ in range(qty_e):
+        v1, v2, w = input().split()
+        if v1 not in arb2num:
+            arb2num[v1] = count
+            num2arb[count] = v1
+            count += 1
+        if v2 not in arb2num:
+            arb2num[v2] = count
+            num2arb[count] = v2
+            count += 1
+        index1 = arb2num[v1]
+        index2 = arb2num[v2]
+        items[index1][index2] = int(w)
+        items[index2][index1] = int(w)
+    min_cost, path = tsp(items)
+    print(min_cost)
+    for index, item in enumerate(path):
+        if index == len(path) - 1:
+            ending = '\n'
+        print(num2arb[item], end=ending)
 
 
 if __name__ == "__main__":
