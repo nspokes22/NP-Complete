@@ -1,3 +1,6 @@
+"""
+    name:  Nick Spokes & Abdallah Derbala
+"""
 import random
 import sys
 
