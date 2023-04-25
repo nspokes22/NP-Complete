@@ -19,8 +19,7 @@ def main():
         sys.stdout = outfile
 
     # Create test case
-    qty_edges = size * (size - 1) // 2
-    print(f"{size} {qty_edges}")
+    print(f"{size} {size * (size - 1) // 2}")
     visited = {}
     for i in range(size):
         for j in range(size):
@@ -29,7 +28,7 @@ def main():
                 if sys.stdout == outfile and i == size - 2:
                     ending = ''
                 visited[(i, j)] = True
-                print(f"{i} {j} {random.randint(0, 10000)}", end=ending)
+                print(f"{chr(97 + i)} {chr(97 + j)} {random.randint(0, 10000)}", end=ending)
     if outfile:
         outfile.close()
 

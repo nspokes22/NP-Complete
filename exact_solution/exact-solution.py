@@ -47,10 +47,11 @@ def main():
         items[index2][index1] = int(w)
     min_cost, path = tsp(items)
     print(min_cost)
-    for index, item in enumerate(path):
-        if index == len(path) - 1:
-            ending = '\n'
-        print(num2arb[item], end=ending)
+    if len(path) > 2:
+        for index, item in enumerate(path):
+            if index == len(path) - 1:
+                ending = '\n'
+            print(num2arb[item], end=ending)
 
 
 if __name__ == "__main__":
