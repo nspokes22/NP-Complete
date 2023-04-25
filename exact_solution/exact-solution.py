@@ -36,14 +36,11 @@ def main():
     items = [[0] * qty_v for _ in range(qty_v)]
     for _ in range(qty_e):
         v1, v2, w = input().split()
-        if v1 not in arb2num:
-            arb2num[v1] = count
-            num2arb[count] = v1
-            count += 1
-        if v2 not in arb2num:
-            arb2num[v2] = count
-            num2arb[count] = v2
-            count += 1
+        for v in [v1, v2]:
+            if v not in arb2num:
+                arb2num[v] = count
+                num2arb[count] = v
+                count += 1
         index1 = arb2num[v1]
         index2 = arb2num[v2]
         items[index1][index2] = int(w)
