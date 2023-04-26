@@ -5,6 +5,7 @@
 """
 import time
 import random
+import sys
 
 def tsp(graph, t):
     start = 0
@@ -37,6 +38,7 @@ def tsp(graph, t):
 
 
 def main():
+    timing = int(sys.argv[1])
     arb2num, num2arb, count, ending = {}, {}, 0, ' '
     qty_v, qty_e = [int(item) for item in input().split()]
     items = [[0] * qty_v for _ in range(qty_v)]
@@ -49,9 +51,9 @@ def main():
                 count += 1
         index1 = arb2num[v1]
         index2 = arb2num[v2]
-        items[index1][index2] = int(w)
-        items[index2][index1] = int(w)
-    min_cost, path = tsp(items, 10)
+        items[index1][index2] = float(w)
+        items[index2][index1] = float(w)
+    min_cost, path = tsp(items, timing)
     print(min_cost)
     if len(path) > 2:
         for index, item in enumerate(path):
