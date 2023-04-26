@@ -43,8 +43,8 @@ def main():
                 count += 1
         index1 = arb2num[v1]
         index2 = arb2num[v2]
-        items[index1][index2] = int(w)
-        items[index2][index1] = int(w)
+        items[index1][index2] = float(w)
+        items[index2][index1] = float(w)
     min_cost, path = tsp(items)
     print(min_cost)
     if len(path) > 2:
