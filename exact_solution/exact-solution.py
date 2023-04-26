@@ -1,6 +1,7 @@
 """
     name:  Nick Spokes & Abdallah Derbala
 
+    Exact solution
     Source: https://www.guru99.com/travelling-salesman-problem.html
 """
 from itertools import permutations

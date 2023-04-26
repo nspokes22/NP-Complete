@@ -7,3 +7,8 @@ To run the exact solution, copy and paste one of the test cases to the clipboard
 Problem: Traveling salesman - Given a weighted, undirected, complete graph where each vertex is a city that is connected to each other city by a distance, what is the shortest path you can take to visit each city once and return to the origin city?
 
 Input format: The input follows the format specified for traveling salesman.
+
+
+
+4/26/2023:
+Presentation link: https://docs.google.com/presentation/d/1XcrSk2qoCz1vKLY6PwyBIOmchQa5UkzYVDAAqoBQgXs/edit?usp=sharing
