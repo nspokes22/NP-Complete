@@ -1,5 +1,6 @@
 """
     name:  Nick Spokes & Abdallah Derbala
+    Program type: Random
 
     Source: https://www.guru99.com/travelling-salesman-problem.html
 """
