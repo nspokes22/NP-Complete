@@ -9,31 +9,37 @@ import sys
 
 def tsp(graph, t):
     start = 0
-    curr_permut, path = [], None
+    curr_permut, cycle = [], None
     min_cost = float('inf')
+    # adds/assigns a number to each vertex to be inputted to current purmutation
     for index in range(len(graph)):
         if index != start:
             curr_permut.append(index)
 
+    # adds the time inputted to the current time to essentially act as a countdown
     time_limit = time.time() + t  # 60 seconds
 
     while time.time() < time_limit:
-        curr_path = [start]
+        curr_cycle = [start]
         current_cost = 0
         item = start
+        # randomizes the current permutation to find a better cycle
         random.shuffle(curr_permut)
 
+        # calculates the total cost of the current cycle
         for index in curr_permut:
             current_cost += graph[item][index]
             item = index
-            curr_path.append(index)
+            curr_cycle.append(index)
         current_cost += graph[item][start]
-        if current_cost < min_cost:
-            path = curr_path
-            min_cost = current_cost
-    path.append(start)
 
-    return min_cost, path
+        # checks if the current cost of the cycle is lower than the current min cost
+        if current_cost < min_cost:
+            cycle = curr_cycle
+            min_cost = current_cost
+    cycle.append(start)
+
+    return min_cost, cycle
 
 
 
@@ -53,11 +59,11 @@ def main():
         index2 = arb2num[v2]
         items[index1][index2] = float(w)
         items[index2][index1] = float(w)
-    min_cost, path = tsp(items, timing)
+    min_cost, cycle = tsp(items, timing)
     print(min_cost)
-    if len(path) > 2:
-        for index, item in enumerate(path):
-            if index == len(path) - 1:
+    if len(cycle) > 2:
+        for index, item in enumerate(cycle):
+            if index == len(cycle) - 1:
                 ending = '\n'
             print(num2arb[item], end=ending)
 
