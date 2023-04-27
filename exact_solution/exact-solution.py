@@ -9,26 +9,26 @@ from itertools import permutations
 
 def tsp(graph):
     start = 0
-    vertex, path = [], None
+    vertex, cycle = [], None
     min_cost = float('inf')
     for index in range(len(graph)):
         if index != start:
             vertex.append(index)
     all_perms = permutations(vertex)
     for curr_permut in all_perms:
-        curr_path = [start]
+        curr_cycle = [start]
         current_cost = 0
         item = start
         for index in curr_permut:
             current_cost += graph[item][index]
             item = index
-            curr_path.append(index)
+            curr_cycle.append(index)
         current_cost += graph[item][start]
         if current_cost < min_cost:
-            path = curr_path
+            cycle = curr_cycle
             min_cost = current_cost
-    path.append(start)
-    return min_cost, path
+    cycle.append(start)
+    return min_cost, cycle
 
 
 def main():
@@ -46,11 +46,11 @@ def main():
         index2 = arb2num[v2]
         items[index1][index2] = float(w)
         items[index2][index1] = float(w)
-    min_cost, path = tsp(items)
+    min_cost, cycle = tsp(items)
     print(min_cost)
-    if len(path) > 2:
-        for index, item in enumerate(path):
-            if index == len(path) - 1:
+    if len(cycle) > 2:
+        for index, item in enumerate(cycle):
+            if index == len(cycle) - 1:
                 ending = '\n'
             print(num2arb[item], end=ending)
 
