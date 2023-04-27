@@ -29,7 +29,7 @@ def tsp(graph, t):
         random.shuffle(curr_permut)
         str_cycle = ' '.join(map(str, curr_permut))
         if str_cycle in bag:
-            pass
+            continue
         bag.add(str_cycle)
 
         # calculates the total cost of the current cycle
