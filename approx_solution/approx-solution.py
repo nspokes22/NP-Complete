@@ -12,6 +12,7 @@ def tsp(graph, t):
     start = 0
     curr_permut, cycle = [], None
     min_cost = float('inf')
+    bag = set()
     # adds/assigns a number to each vertex to be inputted to current purmutation
     for index in range(len(graph)):
         if index != start:
@@ -26,6 +27,10 @@ def tsp(graph, t):
         item = start
         # randomizes the current permutation to find a better cycle
         random.shuffle(curr_permut)
+        str_cycle = ' '.join(map(str, curr_permut))
+        if str_cycle in bag:
+            pass
+        bag.add(str_cycle)
 
         # calculates the total cost of the current cycle
         for index in curr_permut:
