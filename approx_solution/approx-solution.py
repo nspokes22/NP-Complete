@@ -2,7 +2,7 @@
     name:  Nick Spokes & Abdallah Derbala
     Program type: Random
 
-    Source: https://www.guru99.com/travelling-salesman-problem.html
+    Source: https://towardsdatascience.com/how-to-solve-travelling-salesman-problem-with-simulated-annealing-c248447a8bcd
 """
 import time
 import random
