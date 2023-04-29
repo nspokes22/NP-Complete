@@ -20,6 +20,18 @@ def tsp(graph, t):
             curr_permut.append(index)
     time_limit = time.time() + t
     while time.time() < time_limit:
+        if len(graph) < 4:
+            current_cost = 0
+            item = start
+            curr_cycle = [start]
+            for index in curr_permut:
+                current_cost += graph[item][index]
+                item = index
+                curr_cycle.append(index)
+            current_cost += graph[item][start]
+            min_cost = current_cost
+            cycle = curr_cycle
+            break
         random.shuffle(curr_permut)
         sa = SA(100000, 1000, graph, curr_permut, 0.99)
         best, curr_cycle = sa.run()
