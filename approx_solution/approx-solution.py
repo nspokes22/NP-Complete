@@ -7,7 +7,7 @@
 import time
 import random
 from copy import deepcopy
-import sys
+import argparse
 import math
 
 
@@ -65,7 +65,10 @@ def tsp(graph, t):
 
 
 def main():
-    timing = int(sys.argv[1])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("timing", type=int, nargs='?', default=30, help="timing argument")
+    args = parser.parse_args()
+    timing = int(args.timing)
     arb2num, num2arb, count, ending = {}, {}, 0, ' '
     qty_v, qty_e = [int(item) for item in input().split()]
     items = [[0] * qty_v for _ in range(qty_v)]
