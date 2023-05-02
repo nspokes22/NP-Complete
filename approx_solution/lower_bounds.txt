@@ -1,0 +1,45 @@
+Lower Bound Test Cases
+
+
+Graph size: 1
+0
+
+Graph size: 2
+9254.0
+
+Graph size: 3
+7.0
+
+Graph size: 4
+45.0
+
+Graph size: 5
+15622.0
+
+Graph size: 6
+8160.0
+
+Graph size: 7
+11017.0
+
+Graph size: 8
+16015.0
+
+Graph size: 9
+6557.0
+
+Graph size: 10
+9891.0
+
+Graph size: 11
+6781.0
+
+Graph size: 12
+16656.0
+
+Graph size: 13
+12787.0
+
+Graph size: 14
+12028.0
+

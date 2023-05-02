@@ -1,0 +1,17 @@
+Big O(100,001V^2)
+def approx_tsp (graph, time):
+    min_cost = inf
+    cycle = []
+    initpermuation
+    giveup = 100000
+    while time != 0:
+        randomize permutatation
+        while giveup != 0:
+            swap elements in permutatation
+            if swap_permutation_cost < min_cost:
+                update min_cost
+                update cycle
+            else:
+                giveup++
+    return min_cost, cycle
+
