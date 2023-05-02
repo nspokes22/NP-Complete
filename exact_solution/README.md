@@ -1,5 +1,5 @@
 # NP-Complete
-To run the exact solution, copy and paste one of the test cases to the clipboard. Navigate to the folder containing exact-solution.py, then run 'python exact-solution.py'. Now, paste the test case into the command line from the clipboard.
+To run the exact solution, copy and paste one of the test cases to the clipboard. Navigate to the folder containing exact-solution.py, then run 'python exact-solution.py'. Now, paste the test case into the command line from the clipboard. To run all the test cases automatically, change your directory to the exact_solution directory, then run ./run_test_cases.sh. This works the same for the approximate solution, except it requires a time be inputted as a command line argument.
 
 
 
